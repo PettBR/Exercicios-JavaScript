@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 de Array - Separando positivo e negativo e suas somas</title>
+</head>
+<body>
+    <script>
+        /*
+        2) Faça um programa em Javascript que leia um vetor com dez números reais, calcule e mostre a quantidade de números negativos e a soma dos números positivos desse vetor.
+        */
+
+        let num=[], negativosArray=[], positivosArray=[];
+let qtdNegativos = 0;
+let qtdPositivos = 0;
+let somaP = 0;
+let somaN = 0;
+
+alert('Informe 10 números reais.')
+// Criando o array:
+for (let i = 0; i < 10; i++) {
+    num [i] = parseFloat(prompt(`Informe o ${(i+1)}º número.`));
+    }
+for (let numCheck of num) {
+    //verificação se é negativo:
+    if (numCheck < 0){
+        negativosArray.push(numCheck);
+        qtdNegativos++;
+    } else{ // Todos os outros números >= 0
+        positivosArray.push(numCheck);
+        qtdPositivos++;
+    }   
+}
+
+for (let numCheck of positivosArray) {
+somaP = somaP + numCheck;
+}
+
+for (let numCheck of negativosArray) {
+somaN = somaN + numCheck;
+}
+
+    document.write(`<p>Dentre os números digitados, ${qtdNegativos} são negativos e ${qtdPositivos} são positivos.</p>`);
+    document.write(`<p>Números Positivos: ${positivosArray} cuja soma é ${somaP}</p>
+    <hl>
+    <p>Números Negativos: ${negativosArray} cuja soma é ${somaN}</p>`);
+    document.write(`<p>A soma total de todos os números é ${(somaP+somaN)}.</p>`);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 de Array - Array com 20 valores necessariamente diferentes</title>
+</head>
+<body>
+    <script>
+        // 3) Faça um algoritmo para adicionar 20 valores em um array e depois imprima-os no HTML. Evite que o array possua valores duplicados.
+        // Obs.: Considerei valores como qualquer tipo de valor
+
+        let numVinte = [];
+        // Declarei a quantidade de valores pra ser mais fácil testar com menos números e pra caso queira aumentar a qtde.
+        const quantValores = 5;
+
+alert('Insira 20 valores a sua escolha.')
+        for (let i = 0; i < quantValores; i++) {
+            numVinte.push(prompt(`Insira o ${i+1}º valor.`))            
+        }
+
+// Um Set não repete valores então posso criar um novo array igual ao set do primeiro array
+const arrayNrepete =[...new Set(numVinte)];
+document.write(`<p>${arrayNrepete}</p>`)
+
+
+    </script>
+</body>
+</html>

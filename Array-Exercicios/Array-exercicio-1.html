@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 de Array - Separando par e ímpar</title>
+</head>
+<body>
+    <script>
+        /**
+ * 1) Faça um programa em Javascript que leia um vetor de seis elementos numéricos inteiros, calcule e mostre:
+a) A quantidade de números pares
+b) Quais os números pares
+c) A quantidade de números ímpares
+d) Quais os números ímpares
+ */
+
+let num=[], paresArray=[], imparesArray=[];
+let qtdPares = 0;
+let qtdImpares = 0;
+
+alert('Informe 6 números inteiros.')
+// Criando o array:
+for (let i = 0; i < 6; i++) {
+    num [i] = parseInt(prompt(`Informe o ${(i+1)}º número.`));
+    }
+for (let numCheck of num) {
+    //verificação se é par numCheck dividido por 2 dá resto 0:
+    if (numCheck % 2 == 0){
+        paresArray.push(numCheck);
+        qtdPares++;
+    } else{ // Todos os outros números que divididos por 2 dão resto diferente de 0 são impares
+        imparesArray.push(numCheck);
+        qtdImpares++;
+    }   
+}
+    document.write(`<p>Dentre os números digitados, ${qtdPares} são pares e ${qtdImpares} são ímpares.</p>`);
+    document.write(`<p>Números pares: ${paresArray}</p>
+    <hl>
+    <p>Números Ímpares: ${imparesArray}</p>`);
+    </script>
+</body>
+</html>
