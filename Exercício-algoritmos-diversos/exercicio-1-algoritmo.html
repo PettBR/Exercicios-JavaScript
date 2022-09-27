@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 - Maior e menor altura</title>
+</head>
+<body>
+    <script>
+// 1. Desenvolver um algoritmo que leia a altura de 15 pessoas. Este programa deverá calcular e
+// mostrar :
+//     a. A menor altura do grupo;
+//     b. A maior altura do grupo;
+
+
+const quantAlturas = 15;
+let alturasPessoas = [];
+let teste = 0;
+let maiorAltura = 0;
+let menorAltura = Infinity;
+
+// Criando o array:
+for (let i = 0; i < quantAlturas; i++) {
+    alturasPessoas.push(parseFloat(prompt(`Informe a ${(i+1)}º altura.`)));
+    }
+    
+for (let teste of alturasPessoas){
+    if(teste > maiorAltura){
+        maiorAltura = teste;
+    }
+    if(teste < menorAltura){
+        menorAltura = teste;
+    }
+};
+
+    document.write(`<p>A maior altura é ${maiorAltura} e a menor altura é ${menorAltura}</p>`)
+
+    </script>
+</body>
+</html>

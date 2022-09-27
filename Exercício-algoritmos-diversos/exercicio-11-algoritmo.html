@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11 - Leia um número binário e transforme-o em decimal</title>
+</head>
+<body>
+    <script>
+        // 11. Leia um número binário e transforme-o em decimal
+
+        let numeroBinario = parseInt(prompt(`Informe o número binário a ser convertido.`));
+        
+        /* parseInt converts strings to numbers, and it takes a second argument specifying the base in which the string representation is: */
+        let numeroDecimal = parseInt(numeroBinario, 2);
+
+        document.write(`<p>O número binário ${numeroBinario} em base 10 é ${numeroDecimal}</p>`)
+        
+    </script>
+</body>
+</html>

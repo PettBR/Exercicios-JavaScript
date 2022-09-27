@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8 - % de cobre e % de zinco para uma quantidade de Latão</title>
+</head>
+<body>
+    <script>
+//         8. Sabendo que latão é constituído de 70% de cobre e 30% de zinco, indique a quantidade de cada um desses componentes para se obter uma certa quantidade de latão (requerida pelo usuário).
+
+let num = parseFloat(prompt(`Informe a quantidade de latão desejada:`));
+while(num < 0 || isNaN(num)){
+    alert("Por favor informe apenas números reais positivos");
+    num = parseFloat(prompt(`Informe um número inteiro e positivo para calcular o fatorial:`));
+};
+const unidade = String(prompt(`Informe a unidade.`));
+
+document.write(`<p>A quantidade de cobre necessária é ${0.7 * num} '${unidade}' e a quantidade de zinco é ${0.3 * num} '${unidade}' para se obter ${num} '${unidade}' de latão.</p>`);
+
+    </script>
+</body>
+</html>

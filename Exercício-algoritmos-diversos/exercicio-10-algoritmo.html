@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10 Avião da pulverização - </title>
+</head>
+<body>
+    <script>
+//         10. Uma Cia de pulverização utiliza avião para pulverizar lavouras. Os custos de pulverização dependem do tipo de praga e da área a ser contratada conforme a tabela:
+// Tipo 1 – ervas daninhas R$ 50,00 por acre;
+// Tipo 2 – gafanhotos R$ 100,00 por acre;
+// Tipo 3 – broca R$ 150,00 por acre;
+// Tipo 4 – todos acima R$ 250,00 por acre.
+// Se a área a ser pulverizada for superior a 1000 acres, o fazendeiro tem um desconto de 5%. Em adição, qualquer fazendeiro cujo custo for maior do que R$ 750,00 tem um desconto de 10% sobre o valor que ultrapassar os R$ 750,00. Caso ambos os descontos se aplicam o da área é calculado antes. Fazer um algoritmo que leia: o tipo de pulverização 
+//(1 a 4) e área a ser pulverizada; e imprima o valor a ser pago.
+
+let tipoPulv = parseInt(prompt(`Informe o número do tipo de pulverização desejada de acordo com a tabela:
+1 - Tipo 1 - Ervas daninhas R$ 50,00 por acre;
+2 - Tipo 2 - Gafanhotos R$ 100,00 por acre;
+3 - Tipo 3 - Broca R$ 150,00 por acre;
+4 - Tipo 4 – todos acima R$ 250,00 por acre.`));
+while(tipoPulv <= 0 || isNaN(tipoPulv) || tipoPulv > 4){
+    alert("Por favor informe apenas um número de 1 a 4 referente ao tipo adequado, de acordo com a tabela.");
+    tipoPulv = parseInt(prompt(`Informe o número do tipo de pulverização desejada de acordo com a tabela:
+1 - Tipo 1 - Ervas daninhas R$ 50,00 por acre;
+2 - Tipo 2 - Gafanhotos R$ 100,00 por acre;
+3 - Tipo 3 - Broca R$ 150,00 por acre;
+4 - Tipo 4 – todos acima R$ 250,00 por acre.`));
+};
+if(tipoPulv == 4){
+    tipoPulv = 5;
+}
+
+let descontoArea = 1;
+let descontoPreco = 1;
+
+let areaPulv = parseFloat(prompt(`Digite a área (em acres) a ser pulverizada com o tipo ${tipoPulv}`));
+while(areaPulv <= 0 || isNaN(areaPulv)){
+    alert('Digite um número positivo e maior que 0');
+    areaPulv = parseFloat(prompt(`Digite a área (em acres) a ser pulverizada com o tipo ${tipoPulv}`));
+}
+
+if (areaPulv <= 1000){
+    descontoArea = 1;
+} else{
+    descontoArea = 0.95;
+}
+let valorPagamento1 = (tipoPulv * 50) * areaPulv * descontoArea;
+if(tipoPulv == 5){
+    tipoPulv = 4;
+}
+if(valorPagamento1 >= 750.00){
+    descontoPreco = 0.90;
+}else{
+    descontoPreco = 1;
+}
+let valorFinal = valorPagamento1 * descontoPreco;
+
+document.write(`<p>Obrigado por contratar nossos serviços para os seus ${areaPulv} acres de terra. 
+Você escolheu o tipo ${tipoPulv} e o valor a ser pago é ${valorFinal} reais.</p>`)
+
+    </script>
+</body>
+</html>

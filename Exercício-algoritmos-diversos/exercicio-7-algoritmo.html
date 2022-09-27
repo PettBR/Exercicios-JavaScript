@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7 - algoritmo que imprime uma seqüência P.G. de 10 valores.</title>
+</head>
+<body>
+    <script>
+let valoresPG = [];
+
+let Teste1 = parseFloat(prompt(`Informe o valor inicial.`));
+    while(isNaN(Teste1) || Teste1 == 0){
+    alert("Por favor informe apenas números reais e diferentes de 0");
+    Teste1 = parseFloat(prompt(`Informe o valor inicial.`));
+    };
+valorIni = Teste1;
+
+let Teste2 = parseFloat(prompt(`Informe a razão da P.G.`));
+    while(isNaN(Teste2) || Teste2 == 0){
+    alert("Por favor informe apenas números reais e diferentes de 0");
+    Teste2 = parseFloat(prompt(`Informe a razão da P.G.`));
+    };
+razaoPG = Teste2;
+
+
+for (let i = 1; i <= 10; i++) {
+    valoresPG.push(valorIni * (razaoPG ** i));
+};
+
+document.write(`A P.G de razão ${razaoPG} e valor inicial ${valorIni} é: </br><hr/>
+${valorIni};  ${valoresPG.join('; ')}.`);
+    </script>
+</body>
+</html>

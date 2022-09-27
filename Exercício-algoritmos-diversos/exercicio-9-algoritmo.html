@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9 - Multa por excesso de velocidade</title>
+</head>
+<body>
+    <script>
+
+//         9. Leia a velocidade máxima permitida em uma avenida e a velocidade com que o motorista estava dirigindo nela e calcule a multa que uma pessoa vai receber, sabendo que são pagos: 
+    //     a) 50 reais se o motorista ultrapassar em até 10km/h a velocidade permitida (ex.: velocidade máxima: 50km/h; motorista a 60km/h ou a 56km/h); 
+    //     b) 100 reais, se o motorista ultrapassar de 11 a 30 km/h a velocidade permitida. 
+    //     c) 200 reais, se estiver acima de 31km/h da velocidade permitida.
+
+const velocidadeMaxVia = parseInt(prompt(`Insira a velocidade máxima da via.`));
+const velocidadeMotorista = parseInt(prompt(`Insira a velocidade do motorista.`));
+
+let multa = 0;
+if((velocidadeMotorista) < velocidadeMaxVia){
+    document.write(`O motorista não tomou multa, pois sua velocidade de ${velocidadeMotorista} km/h não excedeu a velocidade máxima (${velocidadeMaxVia} km/h) da via.`)
+} else if((velocidadeMotorista - velocidadeMaxVia) > 0 && (velocidadeMotorista - velocidadeMaxVia) <= 10){
+    multa = 50;
+} else if((velocidadeMotorista - velocidadeMaxVia) > 10 && (velocidadeMotorista - velocidadeMaxVia) <= 30){
+    multa = 100;
+} else if((velocidadeMotorista - velocidadeMaxVia) > 30){
+    multa = 200;
+}else{alert('Algum valor digitado está incorreto.')}
+
+if((velocidadeMotorista) > velocidadeMaxVia){
+document.write(`O motorista tomou multa de ${multa} reais.</hr> Sua velocidade de ${velocidadeMotorista} km/h excedeu a velocidade máxima da via (${velocidadeMaxVia} km/h) em ${(velocidadeMotorista - velocidadeMaxVia)} km/h.`)
+}
+
+    </script>
+</body>
+</html>
