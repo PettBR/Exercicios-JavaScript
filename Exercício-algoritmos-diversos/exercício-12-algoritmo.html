@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo que recebe informações de 15 produtos.</title>
+</head>
+<body>
+    <script>
+// Crie um algoritmo que recebe informações de 15 produtos. Cada produto possui nome, marca, uma foto (link de uma imagem da internet), preço unitário e a quantidade de produtos em estoque. Ao receber essas informações dos produtos, imprima no HTML essas informações de cada produto e o produto entre o preço e a quantidade de produtos em estoque (preço total).
+
+const numProd = 15;
+
+let produto = {
+    nome: '',
+    marca: '',
+    fotoLink: '',
+    precoUnitario: 0,
+    quantEstoque: 0,
+    precoTotal: 0,
+}
+listaprodutos = []
+
+
+for (let i = 0; i < numProd; i++) {
+    produto.nome = prompt(`Insira o nome do ${i+1}º produto`);
+    produto.marca = prompt(`Insira a marca do ${i+1}º produto`);
+    produto.fotoLink = prompt(`Insira o link da foto do ${i+1}º produto`);
+    produto.precoUnitario = parseFloat(prompt(`Insira o preco unitário do ${i+1}º produto`));
+    produto.quantEstoque = parseInt((prompt(`Insira a quantidade do estoque do ${i+1}º produto`)));
+    produto.precoTotal = produto.precoUnitario * produto.quantEstoque;
+    
+    document.write(`<p>
+    <img src='${produto.fotoLink}' alt='produto' width=200 height=200 />
+    </br>
+    Nome: ${produto.nome} ;
+    Marca: ${produto.marca} ;
+    Preço: ${produto.precoUnitario} ;
+    Quantidade Estoque: ${produto.quantEstoque} ;
+    Preço TOTAL: ${produto.precoTotal}
+    <hr/></p>`);
+    listaprodutos.push(produto);
+}
+console.log(produto);
+    </script>
+
+</body>
+</html>
